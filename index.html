@@ -1,0 +1,64 @@
+<!-- Version 1 -->
+<html>
+  <head>
+    <title>VPN Killer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        function editDistance(s1, s2) {
+          let dp = [];
+          for (let i = 0; i <= s1.length; i++) {
+            dp[i] = [];
+            for (let j = 0; j <= s2.length; j++) {
+              if (i === 0) {
+                dp[i][j] = j;
+              } else if (j === 0) {
+                dp[i][j] = i;
+              } else if (s1[i - 1] === s2[j - 1]) {
+                dp[i][j] = dp[i - 1][j - 1];
+              } else {
+                dp[i][j] = 1 + Math.min(dp[i][j - 1], dp[i - 1][j], dp[i - 1][j - 1]);
+              }
+            }
+          }
+          return dp[s1.length][s2.length];
+        }
+
+        var pages = {
+          'xvideos': 'https://de.xvideos.com/?k=lisa+ann', 
+          'xhamster': 'https://xhamster42.desi/search/lisa+ann', 
+          'spankbang': 'https://spankbang.party/s/lisa+ann/', 
+          'youporn': 'https://www.you-porn.com/porntags/lisa-ann/', 
+          'pornhub': 'https://de.pornhub.org/video/search?search=lisa+ann', 
+          'qorno': 'https://www.qorno.com/search/a/lisa%20ann',
+          'pornhat': 'https://www.pornhat.one/search/lisa-ann/', 
+          'redtube': 'https://www.redtube.net/?search=lisa+ann', 
+          'ok.xxx': 'https://okxxx2.com/search/lisa-ann/', 
+          'milffox': 'https://www.milffox.com/search/?f=1&q=lisa+ann'
+        };
+
+        function kill(q) {
+          var compareQuery = q.split(' ').join('').toLowerCase();
+          var minDistance = Infinity;
+          var closestPage = pages['milffox'];
+          for (k in pages) {
+            if (k in pages) {
+              var kLen = k.length;
+              var distance = editDistance(k, compareQuery);
+              if (distance <= minDistance) {
+                var minDistance = distance;
+                var closestPage = pages[k];
+              }
+            }
+          }
+          var closestPageDelim = closestPage.split('lisa')[1].split('ann')[0];
+          var fromPhrase = 'lisa'+closestPageDelim+'ann';
+          var toPhrase = q.split(' ').join(closestPageDelim);
+          var searchQuery = closestPage.replace(fromPhrase, toPhrase);
+          window.open(searchQuery, target='_blank');
+        }
+    </script>
+  </head>
+  <body style="background-color:#303030;">
+    <div style="margin-top: 75px;margin-bottom:75px;text-align:center"><a style="color:#99DDFF;font-size:200%">VPN Killer </a><input onchange="kill(this.value);" style="color:white;outline-width:0;font-size:200%;border:0px;border-bottom:1px solid gray;"/></div>
+  </body>
+</html>
