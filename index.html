@@ -1,4 +1,4 @@
-<!-- Version 5 -->
+<!-- Version 7 -->
 <html>
   <head>
     <title>VPN Killer</title>
@@ -40,14 +40,16 @@
         function kill(q) {
 
           // Clean The Query
+          var q = q.split('.').join(' .').split('://').join(' :// ');
           var tmpQ = '';
+          var excludedWords = ' in on with the www https :// www .com .desi .xxx .porn .uk .co .in .de .se .sc ';
           for (var wno=0; wno<q.split(' ').length; wno++) {
             var word = q.split(' ')[wno];
-            if (' in on with the '.index(word) <= -1) {
+            if (excludedWords.indexOf(word) <= -1) {
               var tmpQ = tmpQ + ' ' + word;
             }
           }
-          var q = tmpQ.trim();
+          var q = tmpQ.trim().split('.').join('');
 
           // Find The Apt Site
           var compareQuery = q.split(' ').join('').toLowerCase();
