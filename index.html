@@ -1,4 +1,4 @@
-<!-- Version 4 -->
+<!-- Version 5 -->
 <html>
   <head>
     <title>VPN Killer</title>
@@ -38,13 +38,25 @@
         };
 
         function kill(q) {
+
+          // Clean The Query
+          var tmpQ = '';
+          for (var wno=0; wno<q.split(' ').length; wno++) {
+            var word = q.split(' ')[wno];
+            if (' in on with the '.index(word) <= -1) {
+              var tmpQ = tmpQ + ' ' + word;
+            }
+          }
+          var q = tmpQ.trim();
+
+          // Find The Apt Site
           var compareQuery = q.split(' ').join('').toLowerCase();
           var minDistance = Infinity;
           var closestPage = pages['milffox'];
           for (k in pages) {
             if (k in pages) {
               var kLen = k.length;
-              var distance = editDistance(k, compareQuery);
+              var distance = editDistance(k.split(''), compareQuery);
               if (distance <= minDistance) {
                 var minDistance = distance;
                 var closestPage = pages[k];
@@ -52,12 +64,18 @@
               }
             }
           }
+
+          // Remove Site Name From Query
           var q = ' '+q+' ';
           var q = q.split(finalK).join(' ').trim();
+
+          //Prepare The Query For URL
           var closestPageDelim = closestPage.split('lisa')[1].split('ann')[0];
           var fromPhrase = 'lisa'+closestPageDelim+'ann';
           var toPhrase = q.split(' ').join(closestPageDelim);
           var searchQuery = closestPage.replace(fromPhrase, toPhrase);
+          
+          //Open URL
           window.open(searchQuery, target='_blank');
         }
     </script>
