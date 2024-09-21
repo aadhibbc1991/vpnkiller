@@ -1,4 +1,4 @@
-<!-- Version 3 -->
+<!-- Version 4 -->
 <html>
   <head>
     <title>VPN Killer</title>
@@ -32,7 +32,7 @@
           'qorno': 'https://www.qorno.com/search/a/lisa%20ann',
           'pornhat': 'https://www.pornhat.one/search/lisa-ann/', 
           'redtube': 'https://www.redtube.net/?search=lisa+ann', 
-          'ok.xxx': 'https://okxxx2.com/search/lisa-ann/', 
+          'ok': 'https://okxxx2.com/search/lisa-ann/', 
           'milffox': 'https://www.milffox.com/search/?f=1&q=lisa+ann',
           'pornzog': 'https://pornzog.com/search/?s=lisa+ann'
         };
@@ -48,9 +48,12 @@
               if (distance <= minDistance) {
                 var minDistance = distance;
                 var closestPage = pages[k];
+                var finalK = k;
               }
             }
           }
+          var q = ' '+q+' ';
+          var q = q.split(finalK).join(' ').trim();
           var closestPageDelim = closestPage.split('lisa')[1].split('ann')[0];
           var fromPhrase = 'lisa'+closestPageDelim+'ann';
           var toPhrase = q.split(' ').join(closestPageDelim);
