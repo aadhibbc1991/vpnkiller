@@ -1,4 +1,4 @@
-<!-- Version 18 -->
+<!-- Version 19 -->
 <html>
   <head>
     <title>VPN Killer</title>
@@ -20,13 +20,24 @@
               }
             }
           }
-          if (s1.length > s2.length) {var similarity = s1.length - dp[s1.length][s2.length];} else {var similarity = s2.length - dp[s1.length][s2.length];}
+          if (s1.length > s2.length) {var similarity = (s1.length - dp[s1.length][s2.length])/s1.length;} else {var similarity = (s2.length - dp[s1.length][s2.length])/s1.length;}
           return similarity;
         }
 
         var pages = {
+          
+          'pornpics': 'https://www.pornpics.de/?q=lisa+ann',
+          'pornpictureshq': 'https://www.pornpictureshq.com/?q=lisa+ann+mom',
+          'youx': 'https://www.youx.xxx/tag/lisa-ann/',
+          'hdpornpics': 'https://hdpornpics.xxx/search/lisa+ann/',
+          'yespornpics': 'https://www.yespornpics.com/sex/lisa-ann',
+          'sexhd': 'https://www.sexhd.pics/mobile/lisa-ann/',
+          'hdpornpics': 'https://hdpornpics.com/search/lisa-ann/',
+          'pornpics': 'https://pornpics.vip/xxx/lisa-ann',
+          // 'jjgirls photos images photo image pic pics': 'https://jjgirls.com/pornpics/lisa-ann',
+          
           'xvideos': 'https://de.xvideos.com/?k=lisa+ann', 
-          // 'xvideos': 'https://de.xvideos2.com/?k=lisa+ann',
+          // 'xvideos': 'https://www.xvideos2.com/?k=lisa+ann',
           'xhamster': 'https://xhamster42.desi/search/lisa+ann', 
           'spankbang': 'https://spankbang.party/s/lisa+ann/', 
           'youporn': 'https://www.you-porn.com/porntags/lisa-ann/', 
@@ -40,15 +51,6 @@
           'noodlemagazine': 'https://noodlemagazine.com/video/lisa%20ann',
           'mat6tube': 'https://mat6tube.com/video/lisa%20ann',
           
-          'pornpics': 'https://www.pornpics.de/?q=lisa+ann',
-          'pornpictureshq': 'https://www.pornpictureshq.com/?q=lisa+ann+mom',
-          'youx': 'https://www.youx.xxx/tag/lisa-ann/',
-          'hdpornpics': 'https://hdpornpics.xxx/search/lisa+ann/',
-          'yespornpics': 'https://www.yespornpics.com/sex/lisa-ann',
-          'sexhd': 'https://www.sexhd.pics/mobile/lisa-ann/',
-          'hdpornpics': 'https://hdpornpics.com/search/lisa-ann/',
-          'pornpics': 'https://pornpics.vip/xxx/lisa-ann',
-          // 'jjgirls photos images photo image pic pics': 'https://jjgirls.com/pornpics/lisa-ann',
         };
 
         function kill(q) {
@@ -78,6 +80,7 @@
                 var minDistance = distance;
                 var closestPage = pages[k];
                 var finalK = k;
+                console.log('Similarity: '+minDistance+', Key: '+k);
               }
             }
           }
