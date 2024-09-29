@@ -1,4 +1,4 @@
-<!-- Version 15 -->
+<!-- Version 16 -->
 <html>
   <head>
     <title>VPN Killer</title>
@@ -84,7 +84,7 @@
 
           // Remove Site Name and Type From Query
           var q = ' '+q+' ';
-          for (var fk=0; fk<finalK.split(' ').length; fk++) {var q = q.split(' ' + finalK.split(' ')[fk] + ' ').join(' ');}
+          for (var fk=0; fk<finalK.split(' ').length; fk++) {var q = q.split(finalK.split(' ')[fk]).join(' ');}
           var q = q.trim()
           
           //Prepare The Query For URL
