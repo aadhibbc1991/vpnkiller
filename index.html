@@ -1,4 +1,4 @@
-<!-- Version 9.3 -->
+<!-- Version 10 -->
 <html>
   <head>
     <title>VPN Killer</title>
@@ -20,34 +20,35 @@
               }
             }
           }
-          return dp[s1.length][s2.length];
+          if (s1.length > s2.length) {var similarity = s1.length - dp[s1.length][s2.length];} else {var similarity = s2.length - dp[s1.length][s2.length];}
+          return similarity;
         }
 
         var pages = {
           // 'xvideos': 'https://de.xvideos.com/?k=lisa+ann', 
-          'xvideosvideo': 'https://www.xvideos4.com/?k=lisa+ann',
-          'xhamstervideo': 'https://xhamster42.desi/search/lisa+ann', 
-          'spankbangvideo': 'https://spankbang.party/s/lisa+ann/', 
-          'youpornvideo': 'https://www.you-porn.com/porntags/lisa-ann/', 
-          'pornhubvideo': 'https://de.pornhub.org/video/search?search=lisa+ann', 
-          'qornovideo': 'https://www.qorno.com/search/a/lisa%20ann',
-          'pornhatvideo': 'https://www.pornhat.one/search/lisa-ann/', 
-          'redtubevideo': 'https://www.redtube.net/?search=lisa+ann', 
-          'okvideo': 'https://okxxx2.com/search/lisa-ann/', 
-          'milffoxvideo': 'https://www.milffox.com/search/?f=1&q=lisa+ann',
-          'pornzogvideo': 'https://pornzog.com/search/?s=lisa+ann',
-          'noodlemagazinevideo': 'https://noodlemagazine.com/video/lisa%20ann',
-          'mat6tubevideo': 'https://mat6tube.com/video/lisa%20ann',
+          'xvideos videos clips': 'https://www.xvideos4.com/?k=lisa+ann',
+          'xhamster videos clips': 'https://xhamster42.desi/search/lisa+ann', 
+          'spankbang videos clips': 'https://spankbang.party/s/lisa+ann/', 
+          'youporn videos clips': 'https://www.you-porn.com/porntags/lisa-ann/', 
+          'pornhub videos clips': 'https://de.pornhub.org/video/search?search=lisa+ann', 
+          'qorno videos clips': 'https://www.qorno.com/search/a/lisa%20ann',
+          'pornhat videos clips': 'https://www.pornhat.one/search/lisa-ann/', 
+          'redtube videos clips': 'https://www.redtube.net/?search=lisa+ann', 
+          'okvideo videos clips': 'https://okxxx2.com/search/lisa-ann/', 
+          'milffox videos clips': 'https://www.milffox.com/search/?f=1&q=lisa+ann',
+          'pornzog videos clips': 'https://pornzog.com/search/?s=lisa+ann',
+          'noodlemagazine videos clips': 'https://noodlemagazine.com/video/lisa%20ann',
+          'mat6tube videos clips': 'https://mat6tube.com/video/lisa%20ann',
           
-          'pornpics': 'https://www.pornpics.de/?q=lisa+ann',
-          'pornpictureshq': 'https://www.pornpictureshq.com/?q=lisa+ann+mom',
-          'youxpics': 'https://www.youx.xxx/tag/lisa-ann/',
-          'hdpornpicsxxx': 'https://hdpornpics.xxx/search/lisa+ann/',
-          'yespornpics': 'https://www.yespornpics.com/sex/lisa-ann',
-          'sexhdpics': 'https://www.sexhd.pics/mobile/lisa-ann/',
-          'jjgirlspornpics': 'https://jjgirls.com/pornpics/lisa-ann',
-          'hdpornpics': 'https://hdpornpics.com/search/lisa-ann/',
-          'pornpicsvip': 'https://pornpics.vip/xxx/lisa-ann',
+          'pornpics photos images': 'https://www.pornpics.de/?q=lisa+ann',
+          'pornpictureshq photos images': 'https://www.pornpictureshq.com/?q=lisa+ann+mom',
+          'youxpics photos images': 'https://www.youx.xxx/tag/lisa-ann/',
+          'hdpornpicsxxx photos images': 'https://hdpornpics.xxx/search/lisa+ann/',
+          'yespornpics photos images': 'https://www.yespornpics.com/sex/lisa-ann',
+          'sexhdpics photos images': 'https://www.sexhd.pics/mobile/lisa-ann/',
+          'jjgirlspornpics photos images': 'https://jjgirls.com/pornpics/lisa-ann',
+          'hdpornpics photos images': 'https://hdpornpics.com/search/lisa-ann/',
+          'pornpicsvip photos images': 'https://pornpics.vip/xxx/lisa-ann',
         };
 
         function kill(q) {
@@ -82,7 +83,7 @@
 
           // Remove Site Name From Query
           var q = ' '+q+' ';
-          var q = q.split(finalK).join(' ').trim();
+          var q = q.split(finalK.split(' ')[0]).join(' ').trim();
 
           //Prepare The Query For URL
           var closestPageDelim = closestPage.split('lisa')[1].split('ann')[0];
