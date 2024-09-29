@@ -1,4 +1,4 @@
-<!-- Version 16 -->
+<!-- Version 17 -->
 <html>
   <head>
     <title>VPN Killer</title>
@@ -46,7 +46,7 @@
           'hdpornpics photos images photo image pic pics': 'https://hdpornpics.xxx/search/lisa+ann/',
           'yespornpics photos images photo image pic pics': 'https://www.yespornpics.com/sex/lisa-ann',
           'sexhd photos images photo image pic pics': 'https://www.sexhd.pics/mobile/lisa-ann/',
-          'jjgirls photos images photo image pic pics': 'https://jjgirls.com/pornpics/lisa-ann',
+          // 'jjgirls photos images photo image pic pics': 'https://jjgirls.com/pornpics/lisa-ann',
           'hdpornpics photos images photo image pic pics': 'https://hdpornpics.com/search/lisa-ann/',
           'pornpics photos images photo image pic pics': 'https://pornpics.vip/xxx/lisa-ann',
         };
@@ -84,7 +84,7 @@
 
           // Remove Site Name and Type From Query
           var q = ' '+q+' ';
-          for (var fk=0; fk<finalK.split(' ').length; fk++) {var q = q.split(finalK.split(' ')[fk]).join(' ');}
+          for (var fk=0; fk<finalK.split(' ').length; fk++) {var q = q.split(' ' + finalK.split(' ')[fk] + ' ').join(' ');}
           var q = q.trim()
           
           //Prepare The Query For URL
