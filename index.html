@@ -1,4 +1,4 @@
-<!-- Version 10 -->
+<!-- Version 11 -->
 <html>
   <head>
     <title>VPN Killer</title>
@@ -73,7 +73,7 @@
             if (k in pages) {
               var kLen = k.length;
               var distance = editDistance(k.split(''), compareQuery);
-              if (distance <= minDistance) {
+              if (distance >= minDistance) {
                 var minDistance = distance;
                 var closestPage = pages[k];
                 var finalK = k;
