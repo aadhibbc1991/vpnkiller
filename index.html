@@ -26,29 +26,29 @@
 
         var pages = {
           // 'xvideos': 'https://de.xvideos.com/?k=lisa+ann', 
-          'xvideos videos clips': 'https://www.xvideos4.com/?k=lisa+ann',
-          'xhamster videos clips': 'https://xhamster42.desi/search/lisa+ann', 
-          'spankbang videos clips': 'https://spankbang.party/s/lisa+ann/', 
-          'youporn videos clips': 'https://www.you-porn.com/porntags/lisa-ann/', 
-          'pornhub videos clips': 'https://de.pornhub.org/video/search?search=lisa+ann', 
-          'qorno videos clips': 'https://www.qorno.com/search/a/lisa%20ann',
-          'pornhat videos clips': 'https://www.pornhat.one/search/lisa-ann/', 
-          'redtube videos clips': 'https://www.redtube.net/?search=lisa+ann', 
-          'okvideo videos clips': 'https://okxxx2.com/search/lisa-ann/', 
-          'milffox videos clips': 'https://www.milffox.com/search/?f=1&q=lisa+ann',
-          'pornzog videos clips': 'https://pornzog.com/search/?s=lisa+ann',
-          'noodlemagazine videos clips': 'https://noodlemagazine.com/video/lisa%20ann',
-          'mat6tube videos clips': 'https://mat6tube.com/video/lisa%20ann',
+          'xvideos videos clips clip video vid vids': 'https://www.xvideos4.com/?k=lisa+ann',
+          'xhamster videos clips clip video vid vids': 'https://xhamster42.desi/search/lisa+ann', 
+          'spankbang videos clips clip video vid vids': 'https://spankbang.party/s/lisa+ann/', 
+          'youporn videos clips clip video vid vids': 'https://www.you-porn.com/porntags/lisa-ann/', 
+          'pornhub videos clips clip video vid vids': 'https://de.pornhub.org/video/search?search=lisa+ann', 
+          'qorno videos clips clip video vid vids': 'https://www.qorno.com/search/a/lisa%20ann',
+          'pornhat videos clips clip video vid vids': 'https://www.pornhat.one/search/lisa-ann/', 
+          'redtube videos clips clip video vid vids': 'https://www.redtube.net/?search=lisa+ann', 
+          'okvideo videos clips clip video vid vids': 'https://okxxx2.com/search/lisa-ann/', 
+          'milffox videos clips clip video vid vids': 'https://www.milffox.com/search/?f=1&q=lisa+ann',
+          'pornzog videos clips clip video vid vids': 'https://pornzog.com/search/?s=lisa+ann',
+          'noodlemagazine videos clips clip video vid vids': 'https://noodlemagazine.com/video/lisa%20ann',
+          'mat6tube videos clips clip video vid vids': 'https://mat6tube.com/video/lisa%20ann',
           
-          'pornpics photos images': 'https://www.pornpics.de/?q=lisa+ann',
-          'pornpictureshq photos images': 'https://www.pornpictureshq.com/?q=lisa+ann+mom',
-          'youxpics photos images': 'https://www.youx.xxx/tag/lisa-ann/',
-          'hdpornpicsxxx photos images': 'https://hdpornpics.xxx/search/lisa+ann/',
-          'yespornpics photos images': 'https://www.yespornpics.com/sex/lisa-ann',
-          'sexhdpics photos images': 'https://www.sexhd.pics/mobile/lisa-ann/',
-          'jjgirlspornpics photos images': 'https://jjgirls.com/pornpics/lisa-ann',
-          'hdpornpics photos images': 'https://hdpornpics.com/search/lisa-ann/',
-          'pornpicsvip photos images': 'https://pornpics.vip/xxx/lisa-ann',
+          'pornpics photos images photo image pic pics': 'https://www.pornpics.de/?q=lisa+ann',
+          'pornpictureshq photos images photo image pic pics': 'https://www.pornpictureshq.com/?q=lisa+ann+mom',
+          'youxpics photos images photo image pic pics': 'https://www.youx.xxx/tag/lisa-ann/',
+          'hdpornpicsxxx photos images photo image pic pics': 'https://hdpornpics.xxx/search/lisa+ann/',
+          'yespornpics photos images photo image pic pics': 'https://www.yespornpics.com/sex/lisa-ann',
+          'sexhdpics photos images photo image pic pics': 'https://www.sexhd.pics/mobile/lisa-ann/',
+          'jjgirlspornpics photos images photo image pic pics': 'https://jjgirls.com/pornpics/lisa-ann',
+          'hdpornpics photos images photo image pic pics': 'https://hdpornpics.com/search/lisa-ann/',
+          'pornpicsvip photos images photo image pic pics': 'https://pornpics.vip/xxx/lisa-ann',
         };
 
         function kill(q) {
@@ -82,10 +82,11 @@
             }
           }
 
-          // Remove Site Name From Query
+          // Remove Site Name and Type From Query
           var q = ' '+q+' ';
-          var q = q.split(finalK.split(' ')[0]).join(' ').trim();
-
+          for (var fk=0; fk<finalK.split(' ').length; fk++) {var q = q.split(' ' + finalK.split(' ')[fk] + ' ').join(' ');}
+          var q = q.trim()
+          
           //Prepare The Query For URL
           var closestPageDelim = closestPage.split('lisa')[1].split('ann')[0];
           var fromPhrase = 'lisa'+closestPageDelim+'ann';
