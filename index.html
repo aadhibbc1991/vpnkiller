@@ -85,11 +85,23 @@
             }
           }
 
-          // Remove Site Name and Type From Query
+          // Remove Site Name
           var q = ' '+q+' ';
           for (var fk=0; fk<finalK.split(' ').length; fk++) {var q = q.split(' ' + finalK.split(' ')[fk] + ' ').join(' ');}
           var q = q.trim()
           
+          // Remove Keywords from q
+          var tmpQ = '';
+          var excludedWords = ' pics pic pictures picture images image wallpapers wallpaper photos photo ';
+          var excludedWords = excludedWords + ' vids vid videos video dvds dvd clips clip ';
+          for (var wno=0; wno<q.split(' ').length; wno++) {
+            var word = q.split(' ')[wno];
+            if (excludedWords.indexOf(word) <= -1) {
+              var tmpQ = tmpQ + ' ' + word;
+            }
+          }
+          var q = tmpQ.trim().split('.').join('');
+
           //Prepare The Query For URL
           var closestPageDelim = closestPage.split('lisa')[1].split('ann')[0];
           var fromPhrase = 'lisa'+closestPageDelim+'ann';
